@@ -102,6 +102,38 @@ export function WaitlistSection() {
     });
   };
 
+  const validateField = (name: string, value: string) => {
+    switch (name) {
+      case "name":
+        if (!value.trim()) return "Full name is required.";
+        if (value.trim().length < 2) return "Enter a valid name.";
+        return "";
+
+      case "email":
+        if (!value.trim()) return "Email is required.";
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
+          return "Invalid email.";
+
+        return "";
+
+      case "phone":
+        if (!value.trim()) return "Phone is required.";
+
+        if (!/^[6-9]\d{9}$/.test(value))
+          return "Enter a valid 10 digit number.";
+
+        return "";
+
+      case "company":
+        if (!value.trim()) return "Company name is required.";
+        return "";
+
+      default:
+        return "";
+    }
+  };
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -116,7 +148,7 @@ export function WaitlistSection() {
 
     setErrors((prev) => ({
       ...prev,
-      [name]: "",
+      [name]: validateField(name, value),
     }));
   };
 
@@ -194,6 +226,11 @@ export function WaitlistSection() {
           body: JSON.stringify({
             ...formData,
             role,
+            website: formData.website
+              ? formData.website.startsWith("http")
+                ? formData.website
+                : `https://${formData.website}`
+              : ""
           }),
         }
       );
@@ -205,10 +242,14 @@ export function WaitlistSection() {
       }
 
       setApplicationId(data.applicationId);
-      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 4000);
+
+      setRole("founder");
 
       setFormData({
-        role,
+        role: "founder",
         name: "",
         email: "",
         phone: "",
@@ -221,6 +262,7 @@ export function WaitlistSection() {
       });
 
       setErrors({});
+      setApplicationId(data.applicationId);
     } catch (error: any) {
       alert(error.message);
     } finally {
@@ -365,6 +407,7 @@ export function WaitlistSection() {
                 Full Name *
               </label>
               <input
+              required
               type="text"
               name="name"
               value={formData.name}
@@ -391,6 +434,7 @@ export function WaitlistSection() {
                   Email *
                 </label>
                 <input
+                required
                 type="email"
                 name="email"
                 value={formData.email}
@@ -413,93 +457,116 @@ export function WaitlistSection() {
                 <label className="block text-xs font-black uppercase tracking-widest mb-2 font-headline">
                   Mobile *
                 </label>
+
                 <div className="flex">
                   <span className="flex items-center px-4 border-4 border-r-0 border-on-background bg-surface-container-low font-black font-headline">
                     +91
                   </span>
+
                   <input
+                    required
                     type="tel"
                     name="phone"
                     value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="00000 00000"
+                    onChange={(e) => {
+                      const value = e.target.value
+                        .replace(/\D/g, "")
+                        .slice(0, 10);
+
+                      setFormData((prev) => ({
+                        ...prev,
+                        phone: value,
+                      }));
+
+                      setErrors((prev) => ({
+                        ...prev,
+                        phone:
+                          value.length === 0
+                            ? "Phone number is required."
+                            : value.length !== 10
+                            ? "Enter a valid 10 digit mobile number."
+                            : "",
+                      }));
+                    }}
+                    placeholder="98765 43210"
                     className={cn(
-                      "w-full border-4 px-4 py-3 font-body focus:outline-none bg-white",
-                      errors.phone
-                      ? "border-red-500"
-                      : formData.phone
-                      ? "border-green-500"
-                      : "border-on-background"
+                      inputClasses,
+                      errors.phone && "border-red-500",
+                      !errors.phone &&
+                      formData.phone &&
+                      "border-green-500"
                     )}
                   />
-
-                  {errors.phone && (
-                    <p className="text-red-600 text-xs font-bold mt-2">
-                    {errors.phone}
-                    </p>
-                  )}
                 </div>
+
+                {errors.phone && (
+                  <p className="text-red-600 text-xs font-bold mt-2">
+                    {errors.phone}
+                  </p>
+                )}
               </div>
             </div>
 
-{/* Startup Name + Website */}
-<div className="grid sm:grid-cols-2 gap-6">
+            {/* Startup Name + Website */}
+            <div className="grid sm:grid-cols-2 gap-6">
 
-  {/* Startup Name */}
-  <div>
-    <label className="block text-xs font-black uppercase tracking-widest mb-2 font-headline">
-      {role === "founder" ? "Startup Name *" : "Firm Name *"}
-    </label>
+              {/* Startup Name */}
+              <div>
+                <label className="block text-xs font-black uppercase tracking-widest mb-2 font-headline">
+                  {role === "founder" ? "Startup Name *" : "Firm Name *"}
+                </label>
 
-    <input
-      type="text"
-      name="company"
-      value={formData.company}
-      onChange={handleChange}
-      placeholder="Company name"
-      className={cn(
-        inputClasses,
-        errors.company && "border-red-500",
-        !errors.company &&
-        formData.company &&
-        "border-green-500"
-      )}
-    />
+                <input
+                  required
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  placeholder="Company name"
+                  className={cn(
+                    inputClasses,
+                    errors.company && "border-red-500",
+                    !errors.company &&
+                    formData.company &&
+                    "border-green-500"
+                  )}
+                />
 
-    {errors.company && (
-      <p className="text-red-600 text-xs font-bold mt-2">
-        {errors.company}
-      </p>
-    )}
-  </div>
+                {errors.company && (
+                  <p className="text-red-600 text-xs font-bold mt-2">
+                    {errors.company}
+                  </p>
+                )}
+              </div>
 
 
-  {/* Website */}
-  <div>
-    <label className="block text-xs font-black uppercase tracking-widest mb-2 font-headline">
-      Website
-    </label>
+              {/* Website */}
+              <div>
+                <label className="block text-xs font-black uppercase tracking-widest mb-2 font-headline">
+                  Website
+                </label>
 
-    <input
-      type="text"
-      name="website"
-      value={formData.website}
-      onChange={handleChange}
-      placeholder="yourstartup.com"
-      className={cn(
-        inputClasses,
-        errors.website && "border-red-500"
-      )}
-    />
+                <input
+                  required
+                  type="text"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  placeholder="yourstartup.com"
+                  className={cn(
+                    inputClasses,
+                    errors.website && "border-red-500"
+                  )}
+                />
 
-    {errors.website && (
-      <p className="text-red-600 text-xs font-bold mt-2">
-        {errors.website}
-      </p>
-    )}
-  </div>
+                {errors.website && (
+                  <p className="text-red-600 text-xs font-bold mt-2">
+                    {errors.website}
+                  </p>
+                )}
+              </div>
 
-</div>
+            </div>
 
             {role === "founder" && (
               <div className="grid sm:grid-cols-2 gap-6">
@@ -600,13 +667,16 @@ export function WaitlistSection() {
                 className={inputClasses}
               />
             </div>
-
             <Button
               type="submit"
               variant="gold"
               size="lg"
               shadow
-              className="w-full justify-center"
+              disabled={loading}
+              className={cn(
+                "w-full justify-center",
+                loading && "opacity-60 cursor-not-allowed"
+              )}
             >
             {loading
               ? "Submitting..."

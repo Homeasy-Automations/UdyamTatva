@@ -9,12 +9,12 @@ import type {
 } from "@/types";
 
 export const NAV_LINKS: NavLink[] = [
- 
-  { label: "Services", href: "/services" },
+
+  { label: "About", href: "/about" }, 
   { label: "Founders", href: "/founders" },
   { label: "Investors", href: "/investors" },
   { label: "Enablers", href: "/enablers" },
-  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
   { label: "Waitlist", href: "/waitlist" },
 ];
 

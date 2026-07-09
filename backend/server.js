@@ -30,7 +30,9 @@ app.use(express.json());
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    console.error("MongoDB Connection Error:", err);
+  });
 
 // =============================
 // Home Route
@@ -46,6 +48,7 @@ app.get("/", (req, res) => {
 
 app.post("/api/waitlist", async (req, res) => {
   try {
+    console.log("New Waitlist Request:", req.body);
     const {
       role,
       name,
@@ -69,20 +72,33 @@ app.post("/api/waitlist", async (req, res) => {
         message: "Please fill all required fields.",
       });
     }
-
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({
+        success:false,
+        message:"Invalid email address."
+      });
+    }
+    // Phone validation
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+      return res.status(400).json({
+        success:false,
+        message:"Invalid mobile number."
+      });
+    }
     // =============================
     // Duplicate Email Check
     // =============================
-
-    const existingUser = await Waitlist.findOne({ email });
-
+    const existingUser = await Waitlist.findOne({
+      email: email.trim().toLowerCase(),
+    });
     if (existingUser) {
       return res.status(400).json({
         success: false,
         message: "This email has already joined the waitlist.",
       });
     }
-
     // =============================
     // Generate Application ID
     // =============================
@@ -94,18 +110,31 @@ app.post("/api/waitlist", async (req, res) => {
     // =============================
 
     const waitlist = new Waitlist({
-      role,
-      name,
-      email,
-      phone,
-      company,
-      website,
-      revenue,
-      stage,
-      sectors,
-      message,
-      applicationId,
-      submittedAt: new Date(),
+
+          role,
+
+          name: name.trim(),
+
+          email: email.trim().toLowerCase(),
+
+          phone: phone.trim(),
+
+          company: company.trim(),
+
+          website: website?.trim(),
+
+          revenue,
+
+          stage,
+
+          sectors,
+
+          message: message?.trim(),
+
+          applicationId,
+
+          submittedAt: new Date(),
+
     });
 
     await waitlist.save();
@@ -114,7 +143,7 @@ app.post("/api/waitlist", async (req, res) => {
     // Success Response
     // =============================
 
-    res.status(200).json({
+    res.status(201).json({
       success: true,
       message: "Application submitted successfully.",
       applicationId,

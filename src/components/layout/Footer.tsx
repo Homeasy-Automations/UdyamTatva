@@ -1,4 +1,4 @@
-const FOOTER_LINKS = ["Privacy", "Terms", "Twitter", "Discord"];
+const FOOTER_LINKS = ["Privacy", "Terms", "Linkedin", "Instagram"];
 
 export function Footer() {
   return (
