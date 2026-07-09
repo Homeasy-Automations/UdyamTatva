@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/Button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const CONTACT_DETAILS = [
-  { icon: "mail", label: "hello@udyamtatva.com" },
-  { icon: "call", label: "+91 98765 43210" },
-  { icon: "location_on", label: "Bangalore, India" },
+  { icon: "mail", label: "info@udyamtatva.com" },
+  { icon: "call", label: "+91 80029 00812" },
+  // { icon: "location_on", label: "Bangalore, India" },
 ];
 
 export function ContactSection() {
