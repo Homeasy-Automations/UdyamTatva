@@ -5,13 +5,17 @@ import type {
   Testimonial,
   HowItWorksStep,
   GalleryImage,
+  ServicePillar,
 } from "@/types";
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "How it Works", href: "#how-it-works" },
-  { label: "Features", href: "#features" },
-  { label: "GPS", href: "#gps" },
-  { label: "Marketplace", href: "#marketplace" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "For Founders", href: "/founders" },
+  { label: "For Investors", href: "/investors" },
+  { label: "For Enablers", href: "/enablers" },
+  { label: "About", href: "/about" },
+  { label: "Waitlist", href: "/waitlist" },
 ];
 
 export const HERO_STATS: HeroStat[] = [
@@ -185,3 +189,213 @@ export const GALLERY_IMAGES: GalleryImage[] = [
 
 export const TICKER_TEXT =
   "BUILD NOW • BUILD DIFFERENT • THINK BIGGER • MOVE FASTER • ";
+
+// ── Founders Page ────────────────────────────────────
+export const FOUNDER_STATS: HeroStat[] = [
+  { value: "2,400+", label: "Founders Onboarded" },
+  { value: "₹18M+", label: "Capital Raised" },
+  { value: "94%", label: "Survival Rate" },
+];
+
+export const FOUNDER_STEPS: HowItWorksStep[] = [
+  {
+    step: 1,
+    title: "Apply to a Cohort",
+    description:
+      "Show us your stage, traction, and ambition. Every founder is reviewed — no cold pitches.",
+    variant: "blue",
+  },
+  {
+    step: 2,
+    title: "Get Matched & Mapped",
+    description:
+      "Your Blueprint and Startup GPS pair you with the right mentors and thesis-aligned investors.",
+    variant: "gold",
+  },
+  {
+    step: 3,
+    title: "Pitch the Right Room",
+    description:
+      "Walk into curated intros already warm. No wasted meetings, no cold outbound.",
+    variant: "dark",
+  },
+];
+
+// ── Investors Page ───────────────────────────────────
+export const INVESTOR_STATS: HeroStat[] = [
+  { value: "180+", label: "Investors In Network" },
+  { value: "₹18M+", label: "Capital Deployed" },
+  { value: "72%", label: "Meeting Conversion" },
+];
+
+export const INVESTOR_STEPS: HowItWorksStep[] = [
+  {
+    step: 1,
+    title: "Set Your Thesis",
+    description:
+      "Stage, sector, ticket size, geography. Applied to every cohort we run.",
+    variant: "blue",
+  },
+  {
+    step: 2,
+    title: "Receive Vetted Deal Notes",
+    description:
+      "One page per founder. GPS-scored, Blueprint-mapped. Enough to decide.",
+    variant: "gold",
+  },
+  {
+    step: 3,
+    title: "Signal, We Schedule",
+    description:
+      "Mark interest — we handle every founder conversation from there.",
+    variant: "dark",
+  },
+];
+
+// ── Enablers Page ────────────────────────────────────
+export const ENABLER_STATS: HeroStat[] = [
+  { value: "50+", label: "Partner Programs" },
+  { value: "2,400+", label: "Founders Tracked" },
+  { value: "94%", label: "Cohort Survival Rate" },
+];
+
+export const ENABLER_STEPS: HowItWorksStep[] = [
+  {
+    step: 1,
+    title: "Onboard Your Cohort",
+    description:
+      "Nominate portfolio founders who are ready to build and raise.",
+    variant: "blue",
+  },
+  {
+    step: 2,
+    title: "Track Every Metric",
+    description:
+      "Revenue, runway, team, milestones — one dashboard for the whole program.",
+    variant: "gold",
+  },
+  {
+    step: 3,
+    title: "Report the Outcomes",
+    description:
+      "Know exactly who raised, who got mentored, what moved the needle.",
+    variant: "dark",
+  },
+];
+
+// ── About Page ───────────────────────────────────────
+export const ABOUT_STATS: HeroStat[] = [
+  { value: "2,400+", label: "Founders Onboarded" },
+  { value: "50+", label: "Ecosystem Partners" },
+  { value: "94%", label: "Survival Rate" },
+];
+
+// ── Services Page ────────────────────────────────────
+export const SERVICE_STATS: HeroStat[] = [
+  { value: "7", label: "Growth Pillars" },
+  { value: "2,400+", label: "Founders Onboarded" },
+  { value: "94%", label: "Survival Rate" },
+];
+
+export const SERVICE_PILLARS: ServicePillar[] = [
+  {
+    id: "onboarding",
+    number: "01",
+    title: "Onboarding",
+    proof: "48-Hour Verification",
+    description:
+      "Structured application, background checks, and orientation — plugged into the ecosystem before you know it.",
+    icon: "verified",
+    variant: "dark",
+  },
+  {
+    id: "mentorship",
+    number: "02",
+    title: "Community & Mentorship",
+    proof: "20+ Operator Mentors",
+    description:
+      "AI-matched 1:1 sessions and peer founder circles with people who've actually built and exited.",
+    icon: "groups",
+    variant: "blue",
+  },
+  {
+    id: "pitch-deck",
+    number: "03",
+    title: "Pitch Deck & Business Plan",
+    proof: "40%+ Sharper Pitch Score",
+    description:
+      "AI-assisted deck builder, financial models, and expert reviews that tighten your story before it reaches a room.",
+    icon: "slideshow",
+    variant: "gold",
+  },
+  {
+    id: "product",
+    number: "04",
+    title: "Product Development",
+    proof: "MVP In 8 Weeks",
+    description:
+      "Technical mentorship, no-code training, and a vetted dev network to turn the idea into something buyable.",
+    icon: "construction",
+    variant: "light",
+  },
+  {
+    id: "acceleration",
+    number: "05",
+    title: "Acceleration Support",
+    proof: "12-Week Cohorts",
+    description:
+      "Milestone-based curriculum, weekly check-ins, and a demo day engineered to convert.",
+    icon: "rocket_launch",
+    variant: "dark",
+  },
+  {
+    id: "market-access",
+    number: "06",
+    title: "Market Access",
+    proof: "100+ Enterprise Intros",
+    description:
+      "B2B introductions, GTM strategy, and sales enablement — so revenue isn't a guessing game.",
+    icon: "storefront",
+    variant: "blue",
+  },
+  {
+    id: "funding",
+    number: "07",
+    title: "Grant, Equity & Debt Funding",
+    proof: "300+ Capital Partners",
+    description:
+      "Government grants, angel checks, VC intros, and venture debt — mapped to your stage by the Startup GPS.",
+    icon: "payments",
+    variant: "gold",
+  },
+];
+
+// ── Waitlist Page ────────────────────────────────────
+export interface WaitlistStat {
+  value: string;
+  label: string;
+  subtext: string;
+}
+
+export const WAITLIST_STATS: WaitlistStat[] = [
+  {
+    value: "₹18M+",
+    label: "Capital Raised",
+    subtext: "Equity · Grants · Angel",
+  },
+  {
+    value: "2,400+",
+    label: "Founders Onboarded",
+    subtext: "Revenue-screened cohorts",
+  },
+  {
+    value: "180+",
+    label: "Active Investors",
+    subtext: "Angels · VCs · Family Offices",
+  },
+  {
+    value: "48hrs",
+    label: "Median Intro Time",
+    subtext: "Founder ↔ Investor Match",
+  },
+];
