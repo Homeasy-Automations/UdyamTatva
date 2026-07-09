@@ -17,9 +17,9 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center p-2">
           <Image
-            src="/images/udyam.png"
+            src="/images/UdyamTatvaLogo.webp"
             alt="Udyam Tatva Logo"
-            width={60}
+            width={220}
             height={50}
             className="object-contain"
             priority

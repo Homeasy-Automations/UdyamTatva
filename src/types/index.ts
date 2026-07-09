@@ -64,3 +64,14 @@ export interface Stat {
   value: string;
   label: string;
 }
+
+// ── Services ─────────────────────────────────────────
+export interface ServicePillar {
+  id: string;
+  number: string;
+  title: string;
+  proof: string;
+  description: string;
+  icon: string;
+  variant: CardVariant;
+}
