@@ -133,8 +133,6 @@ app.post("/api/waitlist", async (req, res) => {
 
           applicationId,
 
-          submittedAt: new Date(),
-
     });
 
     await waitlist.save();
@@ -162,6 +160,30 @@ app.get("/api/waitlist", (req, res) => {
   res.json({
     message: "Waitlist API is working 🚀"
   });
+});
+
+// =============================
+// Get All Waitlist Entries
+// =============================
+
+app.get("/api/admin/waitlist", async (req, res) => {
+  try {
+    const waitlists = await Waitlist.find().sort({
+      createdAt: -1,
+    });
+
+    res.json({
+      success: true,
+      data: waitlists,
+    });
+  } catch (err) {
+    console.error(err);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
 });
 
 // =============================
