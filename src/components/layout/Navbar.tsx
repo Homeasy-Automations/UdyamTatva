@@ -101,7 +101,7 @@ export function Navbar() {
               size="md"
               className="w-full justify-center font-normal"
             >
-              Login
+              Login to us
             </Button>
             <Button
               variant="primary"
