@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const Waitlist = require("./models/waitlist");
+const Contact = require("./models/contact");
 
 const app = express();
 
@@ -184,6 +185,94 @@ app.get("/api/admin/waitlist", async (req, res) => {
       message: "Server Error",
     });
   }
+});
+
+// =============================
+// Contact API
+// =============================
+
+app.post("/api/contact", async (req, res) => {
+  try {
+    console.log("New Contact Request:", req.body);
+
+    const {
+      name,
+      email,
+      role,
+      message,
+    } = req.body;
+
+    // Validation
+
+    if (!name || !email || !role || !message) {
+      return res.status(400).json({
+        success: false,
+        message: "Please fill all required fields.",
+      });
+    }
+
+    // Email Validation
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid email address.",
+      });
+    }
+
+    // Duplicate Email Check (Optional)
+
+    const existingContact = await Contact.findOne({
+      email: email.trim().toLowerCase(),
+    });
+
+    if (existingContact) {
+      return res.status(400).json({
+        success: false,
+        message: "This email has already contacted us.",
+      });
+    }
+
+    // Generate Contact ID
+
+    const contactId = `CNT-${Date.now()}`;
+
+    // Save
+
+    const contact = new Contact({
+      contactId,
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      role,
+      message: message.trim(),
+    });
+
+    await contact.save();
+
+    res.status(201).json({
+      success: true,
+      message: "Message sent successfully.",
+      contactId,
+    });
+
+  } catch (err) {
+
+    console.error(err);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+
+  }
+});
+
+app.get("/api/contact", (req, res) => {
+  res.json({
+    message: "Contact API is working 🚀",
+  });
 });
 
 // =============================
