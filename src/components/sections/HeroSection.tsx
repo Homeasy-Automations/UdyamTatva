@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StatBlock } from "@/components/ui/StatBlock";
 import { HERO_STATS } from "@/lib/data";
+import { HeroPaperBall } from "@/components/ui/heropaperball";
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -81,6 +82,19 @@ export function HeroSection() {
           <Button variant="primary" size="lg" shadow>
             Claim Your Roadmap
           </Button>
+        </div>
+
+        <div
+          className="
+            hidden
+            lg:block
+            absolute
+            top-[380px]
+            right-[120px]
+            z-20
+          "
+        >
+          <HeroPaperBall />
         </div>
       </div>
     </header>
