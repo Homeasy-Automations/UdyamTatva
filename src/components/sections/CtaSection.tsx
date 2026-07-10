@@ -3,6 +3,7 @@
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import Link from "next/link";
 
 export function CtaSection() {
   const sectionRef = useScrollReveal<HTMLElement>();
@@ -49,9 +50,11 @@ export function CtaSection() {
 
         {/* CTAs */}
         <div className="reveal reveal-delay-3 flex flex-col md:flex-row gap-6 justify-center">
-          <Button variant="primary" size="xl" shadow>
-            Join Waitlist
-          </Button>
+          <Link href="/waitlist">
+            <Button variant="primary" size="xl" shadow>
+              Join Waitlist
+            </Button>
+          </Link>
         </div>
 
         {/* Reassurance text */}

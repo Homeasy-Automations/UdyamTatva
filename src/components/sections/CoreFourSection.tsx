@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import Link from "next/link";
 
 const TEAM_AVATARS = [
   {
@@ -194,12 +195,12 @@ export function CoreFourSection() {
                 ))}
               </ul>
 
-              <a
-                href="#marketplace"
+              <Link
+                href="/services"
                 className="text-primary font-black uppercase tracking-widest text-sm border-b-4 border-primary pb-1 self-start hover:text-on-primary-fixed transition-none font-headline"
               >
                 Explore Services →
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -231,16 +232,20 @@ export function CoreFourSection() {
                 hyper-growth resources tailored for your specific scaling phase.
               </p>
 
-              <div className="mt-auto flex items-center gap-4 group cursor-pointer">
+              <Link
+                href="/waitlist"
+                className="mt-auto flex items-center gap-4 group cursor-pointer"
+              >
                 <div className="w-12 h-12 bg-on-primary-fixed text-white flex items-center justify-center group-hover:bg-primary transition-none">
                   <span className="material-symbols-outlined">
                     arrow_forward
                   </span>
                 </div>
+
                 <span className="font-black uppercase tracking-tighter text-lg font-headline">
-                  join Waitlist →
+                  Join Waitlist →
                 </span>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
