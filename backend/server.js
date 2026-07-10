@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
-const Waitlist = require("./models/Waitlist");
+const Waitlist = require("./models/waitlist");
 
 const app = express();
 
