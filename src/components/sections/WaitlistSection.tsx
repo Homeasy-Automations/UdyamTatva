@@ -242,6 +242,8 @@ export function WaitlistSection() {
       }
 
       setApplicationId(data.applicationId);
+      setSuccess(true);
+
       setTimeout(() => {
         setSuccess(false);
       }, 4000);
@@ -262,8 +264,11 @@ export function WaitlistSection() {
       });
 
       setErrors({});
-      setApplicationId(data.applicationId);
-    } catch (error: any) {
+      setTimeout(() => {
+        setSuccess(false);
+      }, 4000);
+    } 
+    catch (error: any) {
       alert(error.message);
     } finally {
       setLoading(false);
