@@ -35,7 +35,7 @@ export function HeroSection() {
           aria-hidden="true"
         >
           <source
-            src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4"
+            src="/hero.mp4"
             type="video/mp4"
           />
         </video>
