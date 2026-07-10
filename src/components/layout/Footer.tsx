@@ -28,7 +28,7 @@ export function Footer() {
         </Link>
 
         <a
-          href="https://www.linkedin.com/company/udyamtatva"
+          href="https://in.linkedin.com/company/udyam-tatva"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white opacity-60 hover:opacity-100 transition-none text-sm uppercase tracking-widest font-bold font-body"
@@ -37,7 +37,7 @@ export function Footer() {
         </a>
 
         <a
-          href="https://www.instagram.com/udyamtatva"
+          href="https://www.instagram.com/udyamtatva/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white opacity-60 hover:opacity-100 transition-none text-sm uppercase tracking-widest font-bold font-body"
