@@ -50,10 +50,7 @@ export function CtaSection() {
         {/* CTAs */}
         <div className="reveal reveal-delay-3 flex flex-col md:flex-row gap-6 justify-center">
           <Button variant="primary" size="xl" shadow>
-            Start Now
-          </Button>
-          <Button variant="outline" size="xl">
-            Get a Demo
+            Join Waitlist
           </Button>
         </div>
 

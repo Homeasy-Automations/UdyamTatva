@@ -198,7 +198,7 @@ export function CoreFourSection() {
                 href="#marketplace"
                 className="text-primary font-black uppercase tracking-widest text-sm border-b-4 border-primary pb-1 self-start hover:text-on-primary-fixed transition-none font-headline"
               >
-                Explore Catalog →
+                Explore Services →
               </a>
             </div>
           </div>
@@ -238,7 +238,7 @@ export function CoreFourSection() {
                   </span>
                 </div>
                 <span className="font-black uppercase tracking-tighter text-lg font-headline">
-                  Apply for Cohort →
+                  join Waitlist →
                 </span>
               </div>
             </div>

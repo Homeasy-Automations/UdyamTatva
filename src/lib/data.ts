@@ -19,9 +19,9 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const HERO_STATS: HeroStat[] = [
-  { value: "2,400+", label: "Founders Onboarded" },
-  { value: "₹18M+", label: "Capital Raised" },
-  { value: "94%", label: "Survival Rate" },
+  { value: "400+", label: "Founders" },
+  { value: "50+", label: "Mentors/Advisors" },
+  { value: "50+", label: "Investors" },
 ];
 
 export const CORE_FEATURES: FeatureCard[] = [
@@ -192,9 +192,9 @@ export const TICKER_TEXT =
 
 // ── Founders Page ────────────────────────────────────
 export const FOUNDER_STATS: HeroStat[] = [
-  { value: "2,400+", label: "Founders Onboarded" },
-  { value: "₹18M+", label: "Capital Raised" },
-  { value: "94%", label: "Survival Rate" },
+  { value: "400+", label: "Founders" },
+  { value: "50+", label: "Mentors/Advisors" },
+  { value: "50+", label: "Investors" },
 ];
 
 export const FOUNDER_STEPS: HowItWorksStep[] = [
@@ -223,9 +223,9 @@ export const FOUNDER_STEPS: HowItWorksStep[] = [
 
 // ── Investors Page ───────────────────────────────────
 export const INVESTOR_STATS: HeroStat[] = [
-  { value: "180+", label: "Investors In Network" },
-  { value: "₹18M+", label: "Capital Deployed" },
-  { value: "72%", label: "Meeting Conversion" },
+  { value: "400+", label: "Founders" },
+  { value: "50+", label: "Mentors/Advisors" },
+  { value: "50+", label: "Investors" },
 ];
 
 export const INVESTOR_STEPS: HowItWorksStep[] = [
@@ -255,7 +255,7 @@ export const INVESTOR_STEPS: HowItWorksStep[] = [
 // ── Enablers Page ────────────────────────────────────
 export const ENABLER_STATS: HeroStat[] = [
   { value: "50+", label: "Partner Programs" },
-  { value: "2,400+", label: "Founders Tracked" },
+  { value: "400+", label: "Founders Tracked" },
   { value: "94%", label: "Cohort Survival Rate" },
 ];
 
@@ -293,7 +293,7 @@ export const ABOUT_STATS: HeroStat[] = [
 // ── Services Page ────────────────────────────────────
 export const SERVICE_STATS: HeroStat[] = [
   { value: "7", label: "Growth Pillars" },
-  { value: "2,400+", label: "Founders Onboarded" },
+  { value: "400+", label: "Founders Onboarded" },
   { value: "94%", label: "Survival Rate" },
 ];
 

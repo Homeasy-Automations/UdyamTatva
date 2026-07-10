@@ -81,9 +81,6 @@ export function HeroSection() {
           <Button variant="primary" size="lg" shadow>
             Claim Your Roadmap
           </Button>
-          <Button variant="outline" size="lg" icon="play_circle">
-            Watch the Manifesto
-          </Button>
         </div>
       </div>
     </header>
