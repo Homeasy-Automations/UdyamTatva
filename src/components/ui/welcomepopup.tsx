@@ -240,7 +240,7 @@ export function WelcomePopup() {
 
               {/* RIGHT SIDE STARTS HERE */}
 
-                            {/* RIGHT SIDE */}
+              {/* RIGHT SIDE */}
 
               <motion.div
 
@@ -298,7 +298,7 @@ export function WelcomePopup() {
                 {/* Roadmap Card */}
 
                 <Link
-                  href="/roadmap"
+                  href="/foundercircle"
                   onClick={closePopup}
                   className="relative z-20"
                 >

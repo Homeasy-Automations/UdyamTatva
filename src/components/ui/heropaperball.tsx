@@ -7,7 +7,7 @@ import Image from "next/image";
 export function HeroPaperBall() {
 
   return (
-    <Link href="/">
+    <Link href="/foundercircle">
 
         <motion.div
         className="
