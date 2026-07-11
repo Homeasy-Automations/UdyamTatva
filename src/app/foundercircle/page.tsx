@@ -235,7 +235,7 @@ function HeroSection({ programName, stats }: { programName: string; stats: HeroS
   ];
 
   return (
-    <section className="py-16" style={{ backgroundColor: theme.bg, fontFamily: theme.fontFamily }}>
+    <section className="pt-28 pb-16 md:pt-36 md:pb-20" style={{ backgroundColor: theme.bg, fontFamily: theme.fontFamily }}>
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-6 items-stretch">
         {/* LEFT — dark navy panel */}
         <motion.div

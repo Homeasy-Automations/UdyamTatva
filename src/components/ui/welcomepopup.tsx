@@ -8,6 +8,18 @@ import Image from "next/image";
 export function WelcomePopup() {
   const [open, setOpen] = useState(true);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
+
 //   useEffect(() => {
 //     const alreadySeen = localStorage.getItem("ut-welcome-popup");
 
@@ -19,6 +31,7 @@ export function WelcomePopup() {
 //       return () => clearTimeout(timer);
 //     }
 //   }, []);
+
 
   const closePopup = () => {
     localStorage.setItem("ut-welcome-popup", "true");
@@ -33,7 +46,7 @@ export function WelcomePopup() {
         <motion.section
 
           className="
-            absolute
+            fixed
             inset-0
             z-[60]
             flex
@@ -448,7 +461,7 @@ export function WelcomePopup() {
                 </Link>
 
               </motion.div>
-                            {/* Bottom Information */}
+             {/* Bottom Information */}
 
               <motion.div
                 className="
