@@ -5,76 +5,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-export function WelcomePopup() {
-  const [open, setOpen] = useState(true);
-
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [open]);
-
-//   useEffect(() => {
-//     const alreadySeen = localStorage.getItem("ut-welcome-popup");
-
-//     if (!alreadySeen) {
-//       const timer = setTimeout(() => {
-//         setOpen(true);
-//       }, 250);
-
-//       return () => clearTimeout(timer);
-//     }
-//   }, []);
-
-
-  const closePopup = () => {
-    localStorage.setItem("ut-welcome-popup", "true");
-    setOpen(false);
-  };
-
-  return (
-    <AnimatePresence>
-
-      {open && (
-
-        <motion.section
-
-          className="
-            fixed
-            inset-0
-            z-[60]
-            flex
-            items-center
-            justify-center
-            px-8
-            py-10
-            pointer-events-none
-          "
-
-          initial={{
-            opacity: 0,
-          }}
-
-          animate={{
-            opacity: 1,
-          }}
-
-          exit={{
-            opacity: 0,
-          }}
-
-          transition={{
-            duration: 0.4,
-          }}
-
-        >
-
+    function DesktopPopup({
+      closePopup,
+    }: {
+      closePopup: () => void;
+    }) {
+      return (
+        <>
           {/* Landscape Card */}
 
           <motion.div
@@ -207,7 +144,11 @@ export function WelcomePopup() {
 
                 <div className="mt-10 flex gap-4">
 
-                  <Link href="https://forms.gle/tVXyJxm47sHUEaiw5" onClick={closePopup}>
+                  <Link href="https://forms.gle/tVXyJxm47sHUEaiw5" 
+                    target="_blank"
+                    rel="noopener noreferrer"  
+                    onClick={closePopup}
+                  >
 
                     <button
                       className="
@@ -503,12 +444,147 @@ export function WelcomePopup() {
             </div>
 
           </motion.div>
+          </>
+      );
+    }    
 
-        </motion.section>
+function MobilePopup({
+  closePopup,
+}: {
+  closePopup: () => void;
+}) {
+  return (
+    <motion.div
+      className="
+      relative
+      w-full
+      max-w-sm
+      rounded-3xl
+      overflow-hidden
+      bg-white/10
+      backdrop-blur-2xl
+      border
+      border-white/20
+      p-6
+      text-center
+      "
+    >
+      <button
+        onClick={closePopup}
+        className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white text-black"
+      >
+        ×
+      </button>
 
-      )}
+      <Image
+        src="/udyamtatva_popup.png"
+        alt="Founder Roadmap"
+        width={240}
+        height={240}
+        className="mx-auto"
+      />
 
-    </AnimatePresence>
+      <p className="mt-5 uppercase tracking-[0.3em] text-primary text-xs font-bold">
+        Welcome To
+      </p>
+
+      <h1 className="text-4xl font-black mt-2">
+        Udyam
+        <span className="block text-primary">
+          Tatva
+        </span>
+      </h1>
+
+      <p className="mt-4 text-sm text-white/80 leading-7">
+        {`Discover India's most practical founder roadmap for building and scaling startups.`}
+      </p>
+
+      <div className="mt-6 space-y-3">
+
+        <Link
+          href="https://forms.gle/tVXyJxm47sHUEaiw5"
+          onClick={closePopup}
+        >
+          <button className="w-full py-4 rounded-xl bg-primary text-white font-bold">
+            Start Journey
+          </button>
+        </Link>
+
+        <button
+          onClick={closePopup}
+          className="w-full py-4 rounded-xl bg-white text-black font-semibold"
+        >
+          Skip
+        </button>
+
+      </div>
+
+      <div className="mt-6 text-xs text-white/70">
+        Trusted by Founders • Investors • Enablers
+      </div>
+    </motion.div>
+  );
+}
+
+export function WelcomePopup() {
+  const [open, setOpen] = useState(true);
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+//   useEffect(() => {
+//     const alreadySeen = localStorage.getItem("ut-welcome-popup");
+
+//     if (!alreadySeen) {
+//       const timer = setTimeout(() => {
+//         setOpen(true);
+//       }, 250);
+
+//       return () => clearTimeout(timer);
+//     }
+//   }, []);
+
+
+  const closePopup = () => {
+    localStorage.setItem("ut-welcome-popup", "true");
+    setOpen(false);
+  };
+
+  return (
+  <AnimatePresence>
+    {open && (
+      <motion.section
+        className="fixed inset-0 z-[60] flex items-center justify-center px-4 py-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        {isMobile ? (
+          <MobilePopup closePopup={closePopup} />
+        ) : (
+          <DesktopPopup closePopup={closePopup} />
+        )}
+      </motion.section>
+    )}
+  </AnimatePresence>
 
   );
 }
