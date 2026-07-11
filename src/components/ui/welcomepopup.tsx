@@ -207,7 +207,7 @@ export function WelcomePopup() {
 
                 <div className="mt-10 flex gap-4">
 
-                  <Link href="/waitlist" onClick={closePopup}>
+                  <Link href="https://forms.gle/tVXyJxm47sHUEaiw5" onClick={closePopup}>
 
                     <button
                       className="

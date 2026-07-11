@@ -368,13 +368,13 @@ function RecentEventsSection({ programName, events }: { programName: string; eve
                 {event.description}
               </p>
 
-              <button
+              {/* <button
                 className="group/btn mt-7 flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold uppercase tracking-wide transition-all duration-300"
                 style={{ backgroundColor: theme.navy, color: "#FFFFFF" }}
               >
                 View Details
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
-              </button>
+              </button> */}
             </motion.div>
           ))}
         </div>
@@ -650,7 +650,7 @@ export default function FounderCirclePage() {
 
   const programName = "Founder Circle";
 
-  const registerUrl = "https://forms.google.com";
+  const registerUrl = "https://forms.gle/tVXyJxm47sHUEaiw5";
 
   const heroStats = DEFAULT_HERO_STATS;
 
