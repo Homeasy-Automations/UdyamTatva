@@ -264,11 +264,13 @@ function HeroSection({ programName, stats }: { programName: string; stats: HeroS
           </div>
 
           <a
-            href="#recent"
+            href="https://forms.gle/tVXyJxm47sHUEaiw5"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group mt-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.1em] w-fit"
             style={{ color: theme.orange, borderBottom: `2px solid ${theme.orange}`, paddingBottom: 4 }}
           >
-            Explore The Circle
+            Connect To The Circle
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </motion.div>
