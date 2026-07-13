@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/Button";
 import { StatBlock } from "@/components/ui/StatBlock";
 import { HERO_STATS } from "@/lib/data";
 import { HeroPaperBall } from "@/components/ui/heropaperball";
-import { WelcomePopup } from "../ui/welcomepopup";
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -98,7 +97,6 @@ export function HeroSection() {
           <HeroPaperBall />
         </div>
       </div>
-      <WelcomePopup/>
     </header>
   );
 }
