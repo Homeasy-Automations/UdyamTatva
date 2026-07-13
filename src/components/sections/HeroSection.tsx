@@ -20,6 +20,8 @@ export function HeroSection() {
   }, []);
 
   return (
+    <>
+     <HeroPaperBall />
     <header
       ref={sectionRef}
       className="relative min-h-screen flex items-center overflow-hidden"
@@ -94,9 +96,9 @@ export function HeroSection() {
             z-20
           "
         >
-          <HeroPaperBall />
         </div>
       </div>
     </header>
+    </>
   );
 }
