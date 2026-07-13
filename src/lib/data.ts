@@ -254,9 +254,9 @@ export const INVESTOR_STEPS: HowItWorksStep[] = [
 
 // ── Enablers Page ────────────────────────────────────
 export const ENABLER_STATS: HeroStat[] = [
-  { value: "50+", label: "Partner Programs" },
-  { value: "400+", label: "Founders Tracked" },
-  { value: "94%", label: "Cohort Survival Rate" },
+  { value: "400+", label: "Founders" },
+  { value: "50+", label: "Mentors/Advisors" },
+  { value: "50+", label: "Investors" },
 ];
 
 export const ENABLER_STEPS: HowItWorksStep[] = [
@@ -285,16 +285,16 @@ export const ENABLER_STEPS: HowItWorksStep[] = [
 
 // ── About Page ───────────────────────────────────────
 export const ABOUT_STATS: HeroStat[] = [
-  { value: "2,400+", label: "Founders Onboarded" },
-  { value: "50+", label: "Ecosystem Partners" },
-  { value: "94%", label: "Survival Rate" },
+  { value: "400+", label: "Founders " },
+  { value: "50+", label: "Mentors/Advisors" },
+  { value: "50+", label: "Investors" },
 ];
 
 // ── Services Page ────────────────────────────────────
 export const SERVICE_STATS: HeroStat[] = [
   { value: "7", label: "Growth Pillars" },
-  { value: "400+", label: "Founders Onboarded" },
-  { value: "94%", label: "Survival Rate" },
+  { value: "400+", label: "Founders" },
+  { value: "50+", label: "Mentors/Advisors" },
 ];
 
 export const SERVICE_PILLARS: ServicePillar[] = [
@@ -379,18 +379,18 @@ export interface WaitlistStat {
 
 export const WAITLIST_STATS: WaitlistStat[] = [
   {
-    value: "₹18M+",
-    label: "Capital Raised",
+    value: "50+",
+    label: "Mentors/Advisors",
     subtext: "Equity · Grants · Angel",
   },
   {
-    value: "2,400+",
-    label: "Founders Onboarded",
+    value: "400+",
+    label: "Founders",
     subtext: "Revenue-screened cohorts",
   },
   {
-    value: "180+",
-    label: "Active Investors",
+    value: "50+",
+    label: "Investors",
     subtext: "Angels · VCs · Family Offices",
   },
   {

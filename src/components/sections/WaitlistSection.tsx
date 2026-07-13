@@ -298,9 +298,9 @@ export function WaitlistSection() {
           </h1>
 
           <p className="reveal reveal-delay-2 text-lg md:text-xl font-medium text-surface-variant mb-4 max-w-lg font-body">
-            <span className="text-secondary-container font-black">₹18M+</span>{" "}
+            <span className="text-secondary-container font-black">50+</span>{" "}
             raised on the platform ·{" "}
-            <span className="text-secondary-container font-black">180+</span>{" "}
+            <span className="text-secondary-container font-black">50+</span>{" "}
             vetted investors · Curated, revenue-first deal flow.
           </p>
 
