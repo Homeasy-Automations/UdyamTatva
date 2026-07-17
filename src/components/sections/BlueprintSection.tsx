@@ -73,7 +73,7 @@ export function BlueprintSection() {
               </div>
 
               <a
-                href="#blueprint"
+                href="/blueprint"
                 className="reveal reveal-delay-4 inline-flex items-center gap-2 text-secondary-container font-black uppercase tracking-widest text-sm border-b-4 border-secondary-container pb-1 hover:text-white transition-none font-headline"
               >
                 Explore the Blueprint

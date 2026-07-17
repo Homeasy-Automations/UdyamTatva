@@ -31,7 +31,9 @@ export default function EnablersPage() {
         subtitle="Onboard your portfolio founders, track every metric on one dashboard, and let the Startup GPS handle the matching. You stay focused on program delivery."
         stats={ENABLER_STATS}
         primaryCtaLabel="Partner With Us"
+        primaryCtahref="#"
         secondaryCtaLabel="Download Partner Kit"
+        secondaryCtaHref="#"
       />
 
       <RoleStatsBand
@@ -55,6 +57,7 @@ export default function EnablersPage() {
         panelLabel="Dashboard For The Whole Cohort"
         panelVariant="gold"
         ctaLabel="Partner With Us"
+        ctahref="#"
       />
 
       <RoleClosingCta
@@ -67,6 +70,7 @@ export default function EnablersPage() {
         subtext="Nominate your cohort, get outcome reports on who raised and who met investors, and let Udyam Tatva run the infrastructure end to end."
         primaryCtaLabel="Partner With Us"
         secondaryCtaLabel="Talk to Us"
+        secondaryCtahref="#"
         footnote="Every program is onboarded individually. Fit matters more than size."
       />
 

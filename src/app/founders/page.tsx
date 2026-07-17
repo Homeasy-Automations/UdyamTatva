@@ -31,7 +31,9 @@ export default function FoundersPage() {
         subtitle="Express your interest. If you're a fit, the Startup GPS maps you straight to thesis-aligned investors — no cold emails, no wasted decks."
         stats={FOUNDER_STATS}
         primaryCtaLabel="Apply for Cohort"
+        primaryCtahref="#"
         secondaryCtaLabel="See the Blueprint"
+        secondaryCtaHref="/blueprint"
       />
 
       <RoleStatsBand
@@ -55,6 +57,7 @@ export default function FoundersPage() {
         panelLabel="Cold Outbound Required"
         panelVariant="blue"
         ctaLabel="Start Your Application"
+        ctahref="/waitlist"
       />
 
       <RoleClosingCta
@@ -69,6 +72,7 @@ export default function FoundersPage() {
         subtext="Selected founders join a curated cohort. We write your deal note, map you to the right investors, and coordinate every conversation."
         primaryCtaLabel="Apply for Cohort"
         secondaryCtaLabel="Talk to Us"
+        secondaryCtahref="#"
         footnote="Every application is reviewed. Not all are accepted. That's by design."
       />
 

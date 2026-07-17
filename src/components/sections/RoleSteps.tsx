@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 import type { HowItWorksStep } from "@/types";
+import Link from "next/link";
 
 const stepVariantClasses: Record<HowItWorksStep["variant"], string> = {
   blue: "bg-primary text-white",
@@ -29,6 +30,7 @@ interface RoleStepsProps {
   panelLabel: string;
   panelVariant?: "blue" | "gold" | "dark";
   ctaLabel: string;
+  ctahref:string;
 }
 
 export function RoleSteps({
@@ -41,6 +43,7 @@ export function RoleSteps({
   panelLabel,
   panelVariant = "blue",
   ctaLabel,
+  ctahref,
 }: RoleStepsProps) {
   const sectionRef = useScrollReveal<HTMLElement>();
 
@@ -109,14 +112,16 @@ export function RoleSteps({
             </div>
 
             <div className="reveal reveal-delay-3 mt-10">
-              <Button
-                variant="primary"
-                size="lg"
-                shadow
-                className="bg-on-primary-fixed hover:bg-primary"
-              >
-                {ctaLabel}
-              </Button>
+              <Link href={ctahref}>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  shadow
+                  className="bg-on-primary-fixed hover:bg-primary"
+                >
+                  {ctaLabel}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

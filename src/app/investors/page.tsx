@@ -31,6 +31,7 @@ export default function InvestorsPage() {
         subtitle="Set your thesis once. Every founder in the pipeline is scored by the Startup GPS and reviewed against it before a single intro is made."
         stats={INVESTOR_STATS}
         primaryCtaLabel="Request Investor Access"
+        primaryCtahref="/waitlist"
         secondaryCtaLabel="View a Sample Deal Note"
       />
 
@@ -55,6 +56,7 @@ export default function InvestorsPage() {
         panelLabel="GPS-Scored Deal Flow"
         panelVariant="dark"
         ctaLabel="Set Your Thesis"
+        ctahref="#"
       />
 
       <RoleClosingCta
@@ -67,6 +69,7 @@ export default function InvestorsPage() {
         subtext="No raw decks, no cold outbound. Every deal note is Blueprint-mapped, GPS-scored, and matched to your thesis before it reaches your inbox."
         primaryCtaLabel="Request Investor Access"
         secondaryCtaLabel="Talk to Us"
+        secondaryCtahref="#"
         footnote="Every founder is reviewed. Not all make the cut. That's the point."
       />
 

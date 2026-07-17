@@ -31,7 +31,9 @@ export default function ServicesPage() {
         subtitle="From first application to term sheet — seven pillars, zero gaps. The Startup GPS maps you through every one of them."
         stats={SERVICE_STATS}
         primaryCtaLabel="Start Your Journey"
+        primaryCtahref="#"
         secondaryCtaLabel="See the Blueprint"
+        secondaryCtaHref="/blueprint"
       />
 
       <RoleStatsBand
@@ -53,6 +55,7 @@ export default function ServicesPage() {
         subtext="Apply once. Get matched to every pillar you need — mentorship, product, market access, and funding — on the same track."
         primaryCtaLabel="Apply for Cohort"
         secondaryCtaLabel="Talk to Us"
+        secondaryCtahref="#"
         footnote="No upfront costs. Application takes 5 minutes. Response within 48 hours."
       />
 

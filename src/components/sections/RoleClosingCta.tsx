@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import Link from "next/link";
 
 interface RoleClosingCtaProps {
   badgeLabel: string;
@@ -11,6 +12,7 @@ interface RoleClosingCtaProps {
   subtext: string;
   primaryCtaLabel: string;
   secondaryCtaLabel?: string;
+  secondaryCtahref?: string;
   footnote?: string;
 }
 
@@ -21,6 +23,7 @@ export function RoleClosingCta({
   primaryCtaLabel,
   secondaryCtaLabel,
   footnote,
+  secondaryCtahref,
 }: RoleClosingCtaProps) {
   const sectionRef = useScrollReveal<HTMLElement>();
 
@@ -50,13 +53,15 @@ export function RoleClosingCta({
             {primaryCtaLabel}
           </Button>
           {secondaryCtaLabel && (
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white/10"
-            >
-              {secondaryCtaLabel}
-            </Button>
+            <Link href="#">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white/10"
+              >
+                {secondaryCtaLabel}
+              </Button>
+            </Link>
           )}
         </div>
 

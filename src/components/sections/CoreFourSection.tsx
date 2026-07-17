@@ -108,14 +108,16 @@ export function CoreFourSection() {
                 </div>
               </div>
 
-              <Button
-                variant="primary"
-                size="md"
-                shadow
-                className="self-start bg-white text-on-primary-fixed hover:bg-secondary-container"
-              >
-                Initialize Scan →
-              </Button>
+              <Link href="#">  
+                <Button
+                  variant="primary"
+                  size="md"
+                  shadow
+                  className="self-start bg-white text-on-primary-fixed hover:bg-secondary-container"
+                >
+                  Initialize Scan →
+                </Button>
+              </Link>  
             </div>
           </div>
 

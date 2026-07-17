@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { StatBlock } from "@/components/ui/StatBlock";
 import { HERO_STATS } from "@/lib/data";
 import { HeroPaperBall } from "@/components/ui/heropaperball";
+import Link from "next/link";
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -81,9 +82,11 @@ export function HeroSection() {
 
         {/* CTAs */}
         <div className="reveal reveal-delay-4 flex flex-wrap gap-4">
-          <Button variant="primary" size="lg" shadow>
-            Claim Your Roadmap
-          </Button>
+          <Link href="/blueprint">
+            <Button variant="primary" size="lg" shadow>
+              Claim Your Roadmap
+            </Button>
+          </Link>  
         </div>
 
         <div

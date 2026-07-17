@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { HOW_IT_WORKS_STEPS } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const stepVariantClasses: Record<string, string> = {
   blue: "bg-primary text-white",
@@ -112,14 +113,16 @@ export function VideoFeatureSection() {
             </div>
 
             <div className="reveal reveal-delay-3 mt-10">
-              <Button
-                variant="primary"
-                size="lg"
-                shadow
-                className="bg-on-primary-fixed hover:bg-primary"
-              >
-                Watch Full Demo
-              </Button>
+              <Link href="/blueprint">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  shadow
+                  className="bg-on-primary-fixed hover:bg-primary"
+                >
+                  Watch Full Demo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

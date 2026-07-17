@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StatBlock } from "@/components/ui/StatBlock";
 import type { HeroStat } from "@/types";
+import Link from "next/link";
 
 interface RoleHeroProps {
   badgeLabel: string;
@@ -13,7 +14,9 @@ interface RoleHeroProps {
   subtitle: string;
   stats: HeroStat[];
   primaryCtaLabel: string;
+  primaryCtahref: string;
   secondaryCtaLabel: string;
+  secondaryCtaHref?: string;
 }
 
 export function RoleHero({
@@ -23,7 +26,9 @@ export function RoleHero({
   subtitle,
   stats,
   primaryCtaLabel,
+  primaryCtahref,
   secondaryCtaLabel,
+  secondaryCtaHref = "#",
 }: RoleHeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -66,12 +71,16 @@ export function RoleHero({
         </div>
 
         <div className="reveal reveal-delay-4 flex flex-wrap gap-4">
-          <Button variant="primary" size="lg" shadow>
-            {primaryCtaLabel}
-          </Button>
-          <Button variant="outline" size="lg">
-            {secondaryCtaLabel}
-          </Button>
+          <Link href={primaryCtahref}>
+            <Button variant="primary" size="lg" shadow>
+              {primaryCtaLabel}
+            </Button>
+          </Link>
+          <Link href={secondaryCtaHref}>
+            <Button variant="outline" size="lg">
+              {secondaryCtaLabel}
+            </Button>
+          </Link>
         </div>
       </div>
     </header>
