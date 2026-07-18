@@ -144,7 +144,7 @@ import Image from "next/image";
 
                 <div className="mt-10 flex gap-4">
 
-                  <Link href="https://forms.gle/tVXyJxm47sHUEaiw5" 
+                  <Link href="/" 
                     target="_blank"
                     rel="noopener noreferrer"  
                     onClick={closePopup}
@@ -502,7 +502,7 @@ function MobilePopup({
       <div className="mt-6 space-y-3">
 
         <Link
-          href="https://forms.gle/tVXyJxm47sHUEaiw5"
+          href="/"
           onClick={closePopup}
         >
           <button className="w-full py-4 rounded-xl bg-primary text-white font-bold">
