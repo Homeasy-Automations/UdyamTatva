@@ -53,7 +53,7 @@ export function RoleClosingCta({
             {primaryCtaLabel}
           </Button>
           {secondaryCtaLabel && (
-            <Link href="#">
+            <Link href="/contact">
               <Button
                 variant="outline"
                 size="lg"

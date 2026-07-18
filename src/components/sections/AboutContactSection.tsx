@@ -179,7 +179,7 @@ export function ContactSection() {
       setLoading(true);
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/aboutcontact`,
         {
           method: "POST",
 

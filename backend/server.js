@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const Waitlist = require("./models/waitlist");
+const AboutContact = require("./models/aboutcontact");
 const Contact = require("./models/contact");
 
 const app = express();
@@ -188,10 +189,10 @@ app.get("/api/admin/waitlist", async (req, res) => {
 });
 
 // =============================
-// Contact API
+// AboutContact API
 // =============================
 
-app.post("/api/contact", async (req, res) => {
+app.post("/api/aboutcontact", async (req, res) => {
   try {
     console.log("New Contact Request:", req.body);
 
@@ -224,7 +225,7 @@ app.post("/api/contact", async (req, res) => {
 
     // Duplicate Email Check (Optional)
 
-    const existingContact = await Contact.findOne({
+    const existingContact = await AboutContact.findOne({
       email: email.trim().toLowerCase(),
     });
 
@@ -241,7 +242,7 @@ app.post("/api/contact", async (req, res) => {
 
     // Save
 
-    const contact = new Contact({
+    const contact = new AboutContact({
       contactId,
       name: name.trim(),
       email: email.trim().toLowerCase(),
@@ -269,9 +270,107 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-app.get("/api/contact", (req, res) => {
+app.get("/api/aboutcontact", (req, res) => {
   res.json({
     message: "Contact API is working 🚀",
+  });
+});
+
+// =============================
+// Contact Page API
+// =============================
+
+app.post("/api/contact", async (req, res) => {
+  try {
+    console.log("New Contact Page Request:", req.body);
+
+    const {
+      name,
+      email,
+      phone,
+      company,
+      reason,
+      preferredContact,
+      message,
+    } = req.body;
+
+    // =============================
+    // Validation
+    // =============================
+
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !reason ||
+      !message
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "Please fill all required fields.",
+      });
+    }
+
+    // Email Validation
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid email address.",
+      });
+    }
+
+    // Phone Validation
+
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid mobile number.",
+      });
+    }
+
+    // Generate Contact ID
+
+    const contactId = `CNT-${Date.now()}`;
+
+    // Save
+
+    const contact = new Contact({
+      contactId,
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      phone: phone.trim(),
+      company: company?.trim() || "",
+      reason,
+      preferredContact,
+      message: message.trim(),
+    });
+
+    await contact.save();
+
+    res.status(201).json({
+      success: true,
+      message: "Message sent successfully.",
+      ticketId: contactId,
+    });
+
+  } catch (err) {
+
+    console.error(err);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+
+  }
+});
+
+app.get("/api/contact", (req, res) => {
+  res.json({
+    message: "Contact Page API is working 🚀",
   });
 });
 

@@ -3,7 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { AboutHero } from "@/components/sections/AboutHero";
 import { MissionSection } from "@/components/sections/MissionSection";
-import { ContactSection } from "@/components/sections/ContactSection";
+import { ContactSection } from "@/components/sections/AboutContactSection";
 
 export const metadata: Metadata = {
   title: "About & Contact | Udyam Tatva",

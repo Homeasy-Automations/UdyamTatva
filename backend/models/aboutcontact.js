@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
-const contactSchema = new mongoose.Schema(
+const AboutContactSchema = new mongoose.Schema(
   {
     contactId: {
       type: String,
-      required: true,
       unique: true,
     },
 
@@ -21,27 +20,9 @@ const contactSchema = new mongoose.Schema(
       trim: true,
     },
 
-    phone: {
+    role: {
       type: String,
       required: true,
-      trim: true,
-    },
-
-    company: {
-      type: String,
-      default: "",
-      trim: true,
-    },
-
-    reason: {
-      type: String,
-      required: true,
-    },
-
-    preferredContact: {
-      type: String,
-      enum: ["email", "phone"],
-      default: "email",
     },
 
     message: {
@@ -55,4 +36,4 @@ const contactSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Contact", contactSchema);
+module.exports = mongoose.model("AboutContact", AboutContactSchema);
