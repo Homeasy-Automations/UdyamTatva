@@ -652,7 +652,7 @@ export default function FounderCirclePage() {
 
   const programName = "Founder Circle";
 
-  const registerUrl = "https://forms.gle/tVXyJxm47sHUEaiw5";
+  const registerUrl = "#";
 
   const heroStats = DEFAULT_HERO_STATS;
 
