@@ -75,3 +75,23 @@ export interface ServicePillar {
   icon: string;
   variant: CardVariant;
 }
+
+// ── Team / Leadership ───────────────────────────────
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  badge: string;
+  tagline: string;
+  bio: string;
+  focusAreas: string[];
+  imageSrc: string;
+  imageAlt: string;
+  variant: "dark" | "blue" | "gold";
+  socials: {
+    linkedin?: string;
+    twitter?: string;
+    email?: string;
+  };
+}
+

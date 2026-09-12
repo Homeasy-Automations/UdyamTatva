@@ -400,3 +400,77 @@ export const WAITLIST_STATS: WaitlistStat[] = [
     subtext: "Founder ↔ Investor Match",
   },
 ];
+
+// ── Leadership & Core Team ───────────────────────────
+import type { TeamMember } from "@/types";
+
+export const FOUNDER_DATA: TeamMember = {
+  id: "founder",
+  name: "Ayush Raj",
+  role: "Founder & Chief Executive Officer",
+  badge: "Founder & Lead Architect",
+  tagline: "Building the deal and execution infrastructure for Bharat's next-generation founders.",
+  bio: "Ayush founded Udyam Tatva after experiencing firsthand how fragmented, opaque, and gatekept the Indian startup ecosystem can be for ambitious builders. Having seen hundreds of founders waste months navigating bureaucratic intros and predatory advice, he architected the Startup GPS and closed-loop founder network to ensure zero guesswork and direct leverage for every real builder.",
+  focusAreas: [
+    "Ecosystem Architecture",
+    "Founder Venture Matching",
+    "GTM & Deal Strategy",
+    "0-to-1 Acceleration",
+  ],
+  imageSrc: "/images/team/founder.jpg",
+  imageAlt: "Ayush Raj - Founder & CEO of Udyam Tatva",
+  variant: "dark",
+  socials: {
+    linkedin: "https://linkedin.com",
+    twitter: "https://twitter.com",
+    email: "mailto:info@udyamtatva.com",
+  },
+};
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  {
+    id: "tech-lead",
+    name: "Rohan Sharma",
+    role: "Co-Founder & Head of AI / Technology",
+    badge: "Tech & Systems Lead",
+    tagline: "Engineering real-time market intelligence and autonomous execution pods.",
+    bio: "Obsessed with eliminating operational friction, Rohan leads the core technology stack behind Udyam Tatva. From the proprietary algorithms powering the Startup GPS to automated blueprint generation in 48 hours, he ensures founders spend less time in spreadsheets and more time shipping high-leverage products.",
+    focusAreas: [
+      "Startup GPS Engine",
+      "AI Workflow Automation",
+      "Full-Stack Scale",
+      "Data Infrastructure",
+    ],
+    imageSrc: "/images/team/tech_lead.jpg",
+    imageAlt: "Rohan Sharma - Co-Founder & Head of AI / Technology",
+    variant: "blue",
+    socials: {
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
+      email: "mailto:tech@udyamtatva.com",
+    },
+  },
+  {
+    id: "growth-lead",
+    name: "Ananya Verma",
+    role: "Head of Ecosystem & Community Growth",
+    badge: "Ecosystem & Alliances",
+    tagline: "Uniting 500+ entrepreneurs and top-tier angel syndicates across 20+ cities.",
+    bio: "Ananya is the pulse of the Udyam Tatva community. She drives the nationwide Founder Circle meetups, screens cohort applicants with high-touch diligence, and connects high-conviction founders directly with aligned angels and mentors. Her mission is ensuring no viable startup dies in isolation.",
+    focusAreas: [
+      "Founder Circle Meetups",
+      "Investor Relations",
+      "Cohort Curation",
+      "Strategic Partnerships",
+    ],
+    imageSrc: "/images/team/growth_lead.jpg",
+    imageAlt: "Ananya Verma - Head of Ecosystem & Community Growth",
+    variant: "gold",
+    socials: {
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
+      email: "mailto:community@udyamtatva.com",
+    },
+  },
+];
+
