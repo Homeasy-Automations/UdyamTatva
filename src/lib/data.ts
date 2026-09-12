@@ -406,19 +406,19 @@ import type { TeamMember } from "@/types";
 
 export const FOUNDER_DATA: TeamMember = {
   id: "founder",
-  name: "Ayush Raj",
+  name: "Kundan Kumar",
   role: "Founder & Chief Executive Officer",
   badge: "Founder & Lead Architect",
   tagline: "Building the deal and execution infrastructure for Bharat's next-generation founders.",
-  bio: "Ayush founded Udyam Tatva after experiencing firsthand how fragmented, opaque, and gatekept the Indian startup ecosystem can be for ambitious builders. Having seen hundreds of founders waste months navigating bureaucratic intros and predatory advice, he architected the Startup GPS and closed-loop founder network to ensure zero guesswork and direct leverage for every real builder.",
+  bio: "Kundan founded Udyam Tatva after experiencing firsthand how fragmented, opaque, and gatekept the Indian startup ecosystem can be for ambitious builders. Having seen hundreds of founders waste months navigating bureaucratic intros and predatory advice, he architected the Startup GPS and closed-loop founder network to ensure zero guesswork and direct leverage for every real builder.",
   focusAreas: [
     "Ecosystem Architecture",
     "Founder Venture Matching",
     "GTM & Deal Strategy",
     "0-to-1 Acceleration",
   ],
-  imageSrc: "/images/team/founder.jpg",
-  imageAlt: "Ayush Raj - Founder & CEO of Udyam Tatva",
+  imageSrc: "/images/team/founder.jpeg",
+  imageAlt: "Kundan Kumar - Founder & CEO of Udyam Tatva",
   variant: "dark",
   socials: {
     linkedin: "https://linkedin.com",
