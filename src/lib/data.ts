@@ -421,7 +421,7 @@ export const FOUNDER_DATA: TeamMember = {
   imageAlt: "Kundan Kumar - Founder & CEO of Udyam Tatva",
   variant: "dark",
   socials: {
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/kundan27/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDNXiom6rTzeDFuC7F7ggpg%3D%3D",
     twitter: "https://twitter.com",
     email: "mailto:info@udyamtatva.com",
   },
