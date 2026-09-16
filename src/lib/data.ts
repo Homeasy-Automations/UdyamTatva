@@ -435,7 +435,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imageSrc: "/images/team/Vishwjeet Narayanan.webp",
     imageAlt: "Vishwjeet Narayanan - Founding Member",
     socials: {
-      linkedin: "https://www.linkedin.com/in/vishwjeetnarayanan/",
+      linkedin: "https://www.linkedin.com/in/vishwjeetnarayanan",
       twitter: "https://twitter.com",
       email: "mailto:info@udyamtatva.com",
     },
@@ -447,7 +447,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imageSrc: "/images/team/shubham.webp",
     imageAlt: "Shubham Shrivastava - Founding Member",
     socials: {
-      linkedin: "https://www.linkedin.com/in/ershubham/",
+      linkedin: "https://www.linkedin.com/in/ershubham",
       twitter: "https://twitter.com",
       email: "mailto:info@udyamtatva.com",
     },
@@ -459,7 +459,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imageSrc: "/images/team/Rajnish kumar.webp",
     imageAlt: "Rajnish Kumar - Founding Member",
     socials: {
-      linkedin: "https://www.linkedin.com/in/rajnish-kumar-7655822a/",
+      linkedin: "https://www.linkedin.com/in/rajnish-kumar-7655822a",
       twitter: "https://twitter.com",
       email: "mailto:info@udyamtatva.com",
     },
@@ -471,7 +471,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imageSrc: "/images/team/Khushboo Singh.webp",
     imageAlt: "Khushboo Singh - Founding Member",
     socials: {
-      linkedin: "https://www.linkedin.com/in/khushbooprasher/",
+      linkedin: "https://www.linkedin.com/in/khushbooprasher",
       twitter: "https://twitter.com",
       email: "mailto:info@udyamtatva.com",
     },
