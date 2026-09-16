@@ -10,11 +10,11 @@ import type {
 
 export const NAV_LINKS: NavLink[] = [
 
-  { label: "About", href: "/about" }, 
+  { label: "About", href: "/about" },
   { label: "Founders", href: "/founders" },
   { label: "Investors", href: "/investors" },
   { label: "Enablers", href: "/enablers" },
-  { label: "Our Circle", href: "/foundercircle"},  
+  { label: "Our Circle", href: "/foundercircle" },
   { label: "Services", href: "/services" },
   { label: "Waitlist", href: "/waitlist" },
 ];
@@ -421,7 +421,7 @@ export const FOUNDER_DATA: FounderData = {
   imageAlt: "Kundan Kumar - Founder & CEO of Udyam Tatva",
   variant: "dark",
   socials: {
-    linkedin: "https://www.linkedin.com/in/kundan27/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDNXiom6rTzeDFuC7F7ggpg%3D%3D",
+    linkedin: "https://in.linkedin.com/in/kundan27",
     twitter: "https://twitter.com",
     email: "mailto:info@udyamtatva.com",
   },
