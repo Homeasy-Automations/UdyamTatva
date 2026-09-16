@@ -51,14 +51,19 @@ export function Footer() {
       </div>
 
       {/* Right side: Made with ❤️ By KYNYX SOLUTIONS. */}
-      <div className="text-xs md:text-sm font-bold tracking-wide text-white flex items-center gap-1.5 font-headline">
+      <a
+        href="https://kynyx.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xs md:text-sm font-bold tracking-wide text-white flex items-center gap-1.5 font-headline hover:opacity-90 transition-opacity"
+      >
         <span>Made with</span>
         <span className="text-red-500 inline-block">❤️</span>
         <span>By</span>
-        <span className="text-secondary-container font-black uppercase tracking-wider">
+        <span className="text-secondary-container font-black uppercase tracking-wider hover:underline">
           KYNYX SOLUTIONS.
         </span>
-      </div>
+      </a>
     </footer>
   );
 }
