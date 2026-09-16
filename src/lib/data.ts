@@ -402,9 +402,9 @@ export const WAITLIST_STATS: WaitlistStat[] = [
 ];
 
 // ── Leadership & Core Team ───────────────────────────
-import type { TeamMember } from "@/types";
+import type { TeamMember, FounderData } from "@/types";
 
-export const FOUNDER_DATA: TeamMember = {
+export const FOUNDER_DATA: FounderData = {
   id: "founder",
   name: "Kundan Kumar",
   role: "Founder & Chief Executive Officer",
@@ -429,47 +429,51 @@ export const FOUNDER_DATA: TeamMember = {
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    id: "tech-lead",
-    name: "Rohan Sharma",
-    role: "Co-Founder & Head of AI / Technology",
-    badge: "Tech & Systems Lead",
-    tagline: "Engineering real-time market intelligence and autonomous execution pods.",
-    bio: "Obsessed with eliminating operational friction, Rohan leads the core technology stack behind Udyam Tatva. From the proprietary algorithms powering the Startup GPS to automated blueprint generation in 48 hours, he ensures founders spend less time in spreadsheets and more time shipping high-leverage products.",
-    focusAreas: [
-      "Startup GPS Engine",
-      "AI Workflow Automation",
-      "Full-Stack Scale",
-      "Data Infrastructure",
-    ],
-    imageSrc: "/images/team/tech_lead.jpg",
-    imageAlt: "Rohan Sharma - Co-Founder & Head of AI / Technology",
-    variant: "blue",
+    id: "vishwjeet-narayanan",
+    name: "Vishwjeet Narayanan",
+    role: "Founding Member",
+    imageSrc: "/images/team/Vishwjeet Narayanan.webp",
+    imageAlt: "Vishwjeet Narayanan - Founding Member",
     socials: {
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/vishwjeetnarayanan/",
       twitter: "https://twitter.com",
-      email: "mailto:tech@udyamtatva.com",
+      email: "mailto:info@udyamtatva.com",
     },
   },
   {
-    id: "growth-lead",
-    name: "Ananya Verma",
-    role: "Head of Ecosystem & Community Growth",
-    badge: "Ecosystem & Alliances",
-    tagline: "Uniting 500+ entrepreneurs and top-tier angel syndicates across 20+ cities.",
-    bio: "Ananya is the pulse of the Udyam Tatva community. She drives the nationwide Founder Circle meetups, screens cohort applicants with high-touch diligence, and connects high-conviction founders directly with aligned angels and mentors. Her mission is ensuring no viable startup dies in isolation.",
-    focusAreas: [
-      "Founder Circle Meetups",
-      "Investor Relations",
-      "Cohort Curation",
-      "Strategic Partnerships",
-    ],
-    imageSrc: "/images/team/growth_lead.jpg",
-    imageAlt: "Ananya Verma - Head of Ecosystem & Community Growth",
-    variant: "gold",
+    id: "shubham-shrivastava",
+    name: "Shubham Shrivastava",
+    role: "Founding Member",
+    imageSrc: "/images/team/shubham.webp",
+    imageAlt: "Shubham Shrivastava - Founding Member",
     socials: {
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/ershubham/",
       twitter: "https://twitter.com",
-      email: "mailto:community@udyamtatva.com",
+      email: "mailto:info@udyamtatva.com",
+    },
+  },
+  {
+    id: "rajnish-kumar",
+    name: "Rajnish Kumar",
+    role: "Founding Member",
+    imageSrc: "/images/team/Rajnish kumar.webp",
+    imageAlt: "Rajnish Kumar - Founding Member",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/rajnish-kumar-7655822a/",
+      twitter: "https://twitter.com",
+      email: "mailto:info@udyamtatva.com",
+    },
+  },
+  {
+    id: "khushboo-singh",
+    name: "Khushboo Singh",
+    role: "Founding Member",
+    imageSrc: "/images/team/Khushboo Singh.webp",
+    imageAlt: "Khushboo Singh - Founding Member",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/khushbooprasher/",
+      twitter: "https://twitter.com",
+      email: "mailto:info@udyamtatva.com",
     },
   },
 ];

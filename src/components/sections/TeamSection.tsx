@@ -185,113 +185,83 @@ export function TeamSection() {
                   href="/contact"
                   className="text-xs font-black uppercase tracking-wider text-primary hover:underline flex items-center gap-1 font-headline"
                 >
-                  Write to Ayush Direct →
+                  Write to Kundan Direct →
                 </Link>
               </div>
             </div>
           </div>
         </div>
 
-        {/* ── 2. TWO KEY TEAM MEMBERS GRID ── */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* ── 2. FOUR CORE TEAM MEMBERS GRID ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {TEAM_MEMBERS.map((member, index) => (
             <div
               key={member.id}
               className={cn(
-                "reveal border-4 border-on-background bg-white flex flex-col justify-between",
-                index === 0
-                  ? "shadow-brutal-blue reveal-delay-1"
-                  : "shadow-brutal-gold reveal-delay-2"
+                "group reveal border-4 border-on-background bg-white flex flex-col justify-between overflow-hidden hover:-translate-y-1.5 transition-all duration-300",
+                index % 2 === 0 ? "shadow-brutal-blue" : "shadow-brutal-gold",
+                index === 0 && "reveal-delay-1",
+                index === 1 && "reveal-delay-2",
+                index === 2 && "reveal-delay-3",
+                index === 3 && "reveal-delay-4"
               )}
             >
-              {/* Member Card Header & Image */}
-              <div>
+              {/* Member Image Container */}
+              {member.imageSrc && (
                 <div className="relative h-72 w-full border-b-4 border-on-background bg-on-primary-fixed overflow-hidden">
                   <Image
                     src={member.imageSrc}
-                    alt={member.imageAlt}
+                    alt={member.imageAlt || `${member.name} - ${member.role}`}
                     fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  <div className="absolute top-4 left-4 z-10">
-                    <Badge
-                      variant={member.variant === "blue" ? "blue" : "gold"}
-                    >
-                      {member.badge}
+                  <div className="absolute top-3 left-3 z-10">
+                    <Badge variant={index % 2 === 0 ? "blue" : "gold"}>
+                      {member.role}
                     </Badge>
                   </div>
+                  {/* Subtle dark gradient overlay at bottom of image for contrast */}
+                  <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+                </div>
+              )}
+
+              {/* Member Info */}
+              <div className="p-6 flex flex-col flex-1 justify-between">
+                <div>
+                  <h3 className="text-xl font-black uppercase tracking-tight text-on-primary-fixed font-headline leading-tight group-hover:text-primary transition-colors">
+                    {member.name}
+                  </h3>
+                  <p className="text-primary font-bold text-xs uppercase tracking-widest font-headline mt-1.5 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary-container" />
+                    {member.role}
+                  </p>
                 </div>
 
-                <div className="p-8">
-                  <div className="flex items-start justify-between gap-4 mb-3">
-                    <div>
-                      <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-on-primary-fixed font-headline">
-                        {member.name}
-                      </h3>
-                      <p className="text-primary font-bold text-sm md:text-base font-headline">
-                        {member.role}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      {member.socials.linkedin && (
-                        <SocialIcon
-                          type="linkedin"
-                          href={member.socials.linkedin}
-                          label={`${member.name}'s LinkedIn`}
-                        />
-                      )}
-                      {member.socials.twitter && (
-                        <SocialIcon
-                          type="twitter"
-                          href={member.socials.twitter}
-                          label={`${member.name}'s Twitter`}
-                        />
-                      )}
-                      {member.socials.email && (
-                        <SocialIcon
-                          type="email"
-                          href={member.socials.email}
-                          label={`Email ${member.name}`}
-                        />
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Tagline */}
-                  <p className="text-sm font-bold text-on-primary-fixed mb-4 italic">
-                    &ldquo;{member.tagline}&rdquo;
-                  </p>
-
-                  {/* Bio */}
-                  <p className="text-on-surface-variant font-body text-sm leading-relaxed mb-6">
-                    {member.bio}
-                  </p>
-
-                  {/* Focus Tags */}
-                  <div>
-                    <h4 className="text-xs font-black uppercase tracking-widest text-on-surface-variant mb-2.5 font-headline">
-                      Core Scope:
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {member.focusAreas.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2.5 py-0.5 bg-surface-container border border-on-background text-xs font-bold text-on-surface uppercase tracking-wide"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                {/* Social Links (LinkedIn, Twitter, Email) */}
+                <div className="flex items-center gap-2 pt-4 mt-6 border-t-2 border-surface-container-highest">
+                  {member.socials.linkedin && (
+                    <SocialIcon
+                      type="linkedin"
+                      href={member.socials.linkedin}
+                      label={`${member.name}'s LinkedIn`}
+                    />
+                  )}
+                  {member.socials.twitter && (
+                    <SocialIcon
+                      type="twitter"
+                      href={member.socials.twitter}
+                      label={`${member.name}'s Twitter`}
+                    />
+                  )}
+                  {member.socials.email && (
+                    <SocialIcon
+                      type="email"
+                      href={member.socials.email}
+                      label={`Email ${member.name}`}
+                    />
+                  )}
                 </div>
-              </div>
-
-              {/* Bottom Card Footer */}
-              <div className="px-8 py-4 bg-surface-container-low border-t-2 border-surface-container-highest flex items-center justify-between text-xs font-bold uppercase tracking-wider text-on-surface-variant">
-                <span>{member.variant === "blue" ? "⚡ Tech & Infra" : "🤝 20+ City Network"}</span>
-                <span className="text-on-surface font-mono">Udyam Tatva Team</span>
               </div>
             </div>
           ))}

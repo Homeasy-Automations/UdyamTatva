@@ -81,17 +81,26 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
-  badge: string;
-  tagline: string;
-  bio: string;
-  focusAreas: string[];
-  imageSrc: string;
-  imageAlt: string;
-  variant: "dark" | "blue" | "gold";
+  badge?: string;
+  tagline?: string;
+  bio?: string;
+  focusAreas?: string[];
+  imageSrc?: string;
+  imageAlt?: string;
+  variant?: "dark" | "blue" | "gold";
   socials: {
     linkedin?: string;
     twitter?: string;
     email?: string;
   };
+}
+
+export interface FounderData extends TeamMember {
+  imageSrc: string;
+  imageAlt: string;
+  badge: string;
+  tagline: string;
+  bio: string;
+  focusAreas: string[];
 }
 
