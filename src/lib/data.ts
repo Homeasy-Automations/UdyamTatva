@@ -441,6 +441,18 @@ export const TEAM_MEMBERS: TeamMember[] = [
     },
   },
   {
+    id: "khushboo-singh",
+    name: "Khushboo Singh",
+    role: "Founding Member",
+    imageSrc: "/images/team/Khushboo Singh.webp",
+    imageAlt: "Khushboo Singh - Founding Member",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/khushbooprasher",
+      twitter: "https://twitter.com",
+      email: "mailto:info@udyamtatva.com",
+    },
+  },
+  {
     id: "shubham-shrivastava",
     name: "Shubham Shrivastava",
     role: "Founding Member",
@@ -460,18 +472,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imageAlt: "Rajnish Kumar - Founding Member",
     socials: {
       linkedin: "https://www.linkedin.com/in/rajnish-kumar-7655822a",
-      twitter: "https://twitter.com",
-      email: "mailto:info@udyamtatva.com",
-    },
-  },
-  {
-    id: "khushboo-singh",
-    name: "Khushboo Singh",
-    role: "Founding Member",
-    imageSrc: "/images/team/Khushboo Singh.webp",
-    imageAlt: "Khushboo Singh - Founding Member",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/khushbooprasher",
       twitter: "https://twitter.com",
       email: "mailto:info@udyamtatva.com",
     },
