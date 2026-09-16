@@ -247,13 +247,13 @@ export function TeamSection() {
                       label={`${member.name}'s LinkedIn`}
                     />
                   )}
-                  {member.socials.twitter && (
+                  {/* {member.socials.twitter && (
                     <SocialIcon
                       type="twitter"
                       href={member.socials.twitter}
                       label={`${member.name}'s Twitter`}
                     />
-                  )}
+                  )} */}
                   {member.socials.email && (
                     <SocialIcon
                       type="email"
