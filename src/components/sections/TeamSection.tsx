@@ -227,40 +227,42 @@ export function TeamSection() {
               )}
 
               {/* Member Info */}
-              <div className="p-6 flex flex-col flex-1 justify-between">
-                <div>
-                  <h3 className="text-xl font-black uppercase tracking-tight text-on-primary-fixed font-headline leading-tight group-hover:text-primary transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="text-primary font-bold text-xs uppercase tracking-widest font-headline mt-1.5 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-secondary-container" />
-                    {member.role}
-                  </p>
-                </div>
+              <div className="p-5 flex flex-col justify-center">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="min-w-0">
+                    <h3 className="text-xl font-black uppercase tracking-tight text-on-primary-fixed font-headline leading-tight group-hover:text-primary transition-colors">
+                      {member.name}
+                    </h3>
+                    <p className="text-primary font-bold text-xs uppercase tracking-widest font-headline mt-1.5 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-secondary-container shrink-0" />
+                      <span>{member.role}</span>
+                    </p>
+                  </div>
 
-                {/* Social Links (LinkedIn, Twitter, Email) */}
-                <div className="flex items-center gap-2 pt-4 mt-6 border-t-2 border-surface-container-highest">
-                  {member.socials.linkedin && (
-                    <SocialIcon
-                      type="linkedin"
-                      href={member.socials.linkedin}
-                      label={`${member.name}'s LinkedIn`}
-                    />
-                  )}
-                  {/* {member.socials.twitter && (
-                    <SocialIcon
-                      type="twitter"
-                      href={member.socials.twitter}
-                      label={`${member.name}'s Twitter`}
-                    />
-                  )} */}
-                  {/* {member.socials.email && (
-                    <SocialIcon
-                      type="email"
-                      href={member.socials.email}
-                      label={`Email ${member.name}`}
-                    />
-                  )} */}
+                  {/* Social Links (LinkedIn, Twitter, Email) */}
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    {member.socials.linkedin && (
+                      <SocialIcon
+                        type="linkedin"
+                        href={member.socials.linkedin}
+                        label={`${member.name}'s LinkedIn`}
+                      />
+                    )}
+                    {/* {member.socials.twitter && (
+                      <SocialIcon
+                        type="twitter"
+                        href={member.socials.twitter}
+                        label={`${member.name}'s Twitter`}
+                      />
+                    )} */}
+                    {/* {member.socials.email && (
+                      <SocialIcon
+                        type="email"
+                        href={member.socials.email}
+                        label={`Email ${member.name}`}
+                      />
+                    )} */}
+                  </div>
                 </div>
               </div>
             </div>
