@@ -82,8 +82,8 @@ const CHANNELS = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+91 98765 43210",
-    href: "tel:+919876543210",
+    value: "+91 80029 00812",
+    href: "tel:+918002900812",
     note: "Mon–Sat, 10am–7pm IST",
   },
   {
@@ -96,8 +96,8 @@ const CHANNELS = [
   {
     icon: MapPin,
     label: "Visit Us",
-    value: "New Delhi, India",
-    href: "https://maps.google.com/?q=New+Delhi",
+    value: "Patna, Bihar, India",
+    href: "https://maps.app.goo.gl/FRt2GsMSikVmBPVe9",
     note: "By appointment only",
   },
 ];
@@ -320,7 +320,7 @@ export default function ContactPage() {
   return (
     <main>
 
-        <Navbar/>
+      <Navbar />
       {/* ================= HERO + FORM ================= */}
       <section
         ref={heroRef}
@@ -514,8 +514,8 @@ export default function ContactPage() {
                             value.length === 0
                               ? "Phone number is required."
                               : value.length !== 10
-                              ? "Enter a valid 10 digit mobile number."
-                              : "",
+                                ? "Enter a valid 10 digit mobile number."
+                                : "",
                         }));
                       }}
                       placeholder="98765 43210"
@@ -680,7 +680,7 @@ export default function ContactPage() {
                 {/* Replace src with your real Google Maps embed URL */}
                 <iframe
                   title="Udyam Tatva office location"
-                  src="https://maps.google.com/maps?q=New+Delhi&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7195.688375443201!2d85.130952!3d25.6100933!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed59346f4e3b4d%3A0xdaa21a164b9e944f!2sB-HUB!5e0!3m2!1sen!2sin!4v1789716406524!5m2!1sen!2sin"
                   className="w-full h-full grayscale contrast-125"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -733,7 +733,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </main>
   );
 }
