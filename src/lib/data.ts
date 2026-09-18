@@ -422,7 +422,7 @@ export const FOUNDER_DATA: FounderData = {
   variant: "dark",
   socials: {
     linkedin: "https://in.linkedin.com/in/kundan27",
-    twitter: "https://twitter.com",
+    twitter: "https://x.com/udyamtatva",
     email: "mailto:info@udyamtatva.com",
   },
 };

@@ -254,13 +254,13 @@ export function TeamSection() {
                       label={`${member.name}'s Twitter`}
                     />
                   )} */}
-                  {member.socials.email && (
+                  {/* {member.socials.email && (
                     <SocialIcon
                       type="email"
                       href={member.socials.email}
                       label={`Email ${member.name}`}
                     />
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>
